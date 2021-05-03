@@ -14,9 +14,9 @@ public class Backwards extends AppCompatActivity {
         setContentView(R.layout.activity_backwards);
         Intent intent = getIntent();
         String word = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        String toPrint= reverseString(word);
+        //String toPrint= reverseString(word);
         TextView t1 = findViewById(R.id.textView2);
-        t1.setText(toPrint);
+        t1.setText(word);
     }
 
 
@@ -24,6 +24,7 @@ public class Backwards extends AppCompatActivity {
 
 
 
+/*
 
     public String reverseString(String word){
         String reverse = " ";
@@ -32,6 +33,7 @@ public class Backwards extends AppCompatActivity {
         }
         return reverse;
     }
+*/
 
 
 }

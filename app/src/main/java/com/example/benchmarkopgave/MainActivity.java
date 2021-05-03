@@ -14,7 +14,7 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<String> simpleArray = new ArrayList();
+    ArrayList<Word> simpleArray = new ArrayList();
 
     public static final String EXTRA_MESSAGE =  "com.example.benchmarkopgave.extra.MESSAGE";
     public String wordToSend;
@@ -26,12 +26,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    // Metode der står for at lægge ordet i gemme listen
     public void startWord(View view) {
     EditText e1 = findViewById(R.id.editText1);
-    wordToSend = e1.getText().toString();   
-    simpleArray.add(wordToSend);
+    wordToSend = e1.getText().toString();
+    Word word = new Word(wordToSend);
+    simpleArray.add(word);
     Intent intent = new Intent(MainActivity.this,Backwards.class);
-    intent.putExtra(EXTRA_MESSAGE, wordToSend);
+    intent.putExtra(EXTRA_MESSAGE, word.getReverseWord());
     startActivity(intent);
 
 
